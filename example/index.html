@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <script src="../src/slide-swipe-transition.js"></script>
+    <link rel="stylesheet" href="../src/slide-swipe-transition.css" />
+  </head>
+  <body>
+    <div id="app">
+      <slide-swipe-transition name="my-slides" :active_slide="active_slide" :slide_count="parseInt(2)">
+        <div slot="slide-1">
+          {{ message1 }}
+          <a href="#" @click="active_slide=2">&gt;</a>
+        </div>
+        <div slot="slide-2">
+          <a href="#" @click="active_slide=1">&lt;</a>
+          {{ message2 }}
+        </div>
+      </slide-swipe-transition>
+      <a href="#" @click="active_slide=1">show slide 1</a>
+      <a href="#" @click="active_slide=2">show slide 2</a>
+      <pre>{{ $data }}</pre>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        active_slide: 1,
+        message1: "I'm slide1",
+        message2: "I'm slide2"
+      }
+    })
+  </script>
+</html>

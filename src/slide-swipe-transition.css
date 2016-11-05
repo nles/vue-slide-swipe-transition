@@ -1,0 +1,8 @@
+.slide-swipe-transition {
+  position: relative;
+  width: 100px; height: 100px;
+}
+.slide-swipe-transition .slide-wrapper {
+  width: 100%; height: 100%;
+  position: absolute;
+}
